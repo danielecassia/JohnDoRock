@@ -6,7 +6,8 @@ import { useHistory } from 'react-router-dom';
 
 export default function Login() {
   const history = useHistory();
-  axios.get('/users/me').then((res) => history.pushState('/dashboard'));
+  axios.get('/users/me').then((res) => history.push('/home'))
+  .catch((err) => console.log("NAO TA LOGADO"));
   return(
     <div className="Login">
       <section className="container">
