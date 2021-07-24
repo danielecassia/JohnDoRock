@@ -24,4 +24,8 @@ const usersRouter = require('../users/controller/user-controller');
 
 app.use('/users', usersRouter);
 
+const errorHandler = require('../middlewares/error-handler');
+
+app.use(errorHandler);
+
 module.exports = app;

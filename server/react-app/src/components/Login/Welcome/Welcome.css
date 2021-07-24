@@ -1,0 +1,17 @@
+.Welcome {
+  background: #dba520;
+  height: 100%;
+}
+
+.saudacao {
+  color: #ffffff;
+  display: flex;
+  height: 100%;
+  font-weight: bold;
+  margin: 0;
+  font-size: 7vh;
+  font-family: Nunito Sans;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}

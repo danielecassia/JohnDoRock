@@ -1,71 +1,85 @@
 const bcrypt = require('bcrypt');
 const User = require('../model/User');
+const PermissionError = require('../../errors/PermissionError');
+const QueryError = require('../../errors/QueryError');
 
 class UserService {
   async createUser(user) {
-    try {
       const saltRounds = 10;
       user.senha = await bcrypt.hash(user.senha, saltRounds);
       await User.create(user);
-    } catch (error) {
-      let erro = new Error();
-      // throw error;
-    }
   }
 
   async getAllUsers() {
-    return User.findAll({
+    return await User.findAll({
       raw: true,
       attributes:
     {
       exclude:
-        ['password', 'createdAt', 'updatedAt'],
+        ['senha', 'createdAt', 'updatedAt'],
     },
     });
   }
 
   async getUserById(id) {
-    return User.findByPk(id, {
+    const user = await User.findByPk(id, {
       raw: true,
       attributes:
     {
       exclude:
-        ['password', 'createdAt', 'updatedAt'],
+        ['senha', 'createdAt', 'updatedAt'],
     },
     });
+    if(!user){
+      throw new QueryError(`Não foi encontrado um usuário com o ID: ${id}`);
+    }
+    return user;
   }
 
   async updateUser(id, reqUserId, reqUserRole, body) {
     const user = await User.findByPk(id);
+    if(!user){
+      throw new QueryError(`Não foi encontrado um usuário com o ID: ${id}`);
+    }
     const isAdmin = reqUserRole === 'admin';
     const isUpdateUser = reqUserId == id;
     
     if (isAdmin || isUpdateUser) {
       if (!isAdmin && body.cargo) {
-        throw new Error('Você não tem permissão para atualizar seu papel');
+        throw new PermissionError(
+          'Você não tem permissão para atualizar seu papel');
       }
       await user.update(body);
     } else {
-      throw new Error('Você não tem permissão para atualizar esse usuário');
+      throw new PermissionError(
+        'Você não tem permissão para atualizar esse usuário');
     }
   }
 
   async deleteUser(id, reqUserId) {
     const user = await User.findByPk(id);
+    if(!user){
+      throw new QueryError(`Não foi encontrado um usuário com o ID: ${id}`);
+    }
     if (id == reqUserId) {
-      throw new Error('Você não pode se deletar!');
+      throw new PermissionError(
+        'Você não pode se deletar!');
     }
     await user.destroy();
   }
 
   async getCurrentUser(id) {
-    return User.findByPk(id,
+    const user = await User.findByPk(id,
       {
-        attributes: {
+        attributes: { 
           exclude:
-        ['password', 'createdAt', 'updatedAt'],
+        ['senha', 'createdAt', 'updatedAt'],
         },
       });
+      if(!user) {
+        throw new QueryError(`Não foi encontrado um usuário com o ID: ${id}`);
+      }
+      return user;
   }
 }
 

@@ -1,5 +1,5 @@
-const sequelize = require('../../database/index.js');
-const {DataTypes} = require('sequelize');
+const { DataTypes } = require('sequelize');
+const sequelize = require('../../database/index');
 
 const User = sequelize.define('Users', {
   id: {
@@ -27,13 +27,13 @@ const User = sequelize.define('Users', {
   },
   cargo: {
     type: DataTypes.ENUM,
-    values: ['admin','professor', 'aluno'],
+    values: ['admin', 'professor', 'aluno'],
     allowNull: false,
   },
 });
 
-User.sync({alter: false, force: false})
-  .then(()=> console.log('A tabela Users foi criada!'))
-  .catch((error)=> console.log(error));
+User.sync({ alter: false, force: false })
+  .then(() => console.log('A tabela Users foi criada!'))
+  .catch((error) => console.log(error));
 
 module.exports = User;
