@@ -10,7 +10,13 @@ app.use(express.urlencoded({
 
 const cors = require('cors');
 
-app.use(cors());
+const REACT_APP_API_URL = "http://localhost:3001";
+
+app.use(cors({
+  origin: REACT_APP_API_URL,
+  credentials: true,
+}));
+
 
 const cookieParser = require('cookie-parser');
 
