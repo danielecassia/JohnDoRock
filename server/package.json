@@ -18,6 +18,7 @@
   "homepage": "https://github.com/Daniele-Cassia/JohnDoRock#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
+    "classnames": "^2.3.1",
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
@@ -28,6 +29,8 @@
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
     "passport-local": "^1.0.0",
+    "primeicons": "^4.1.0",
+    "primereact": "^6.5.0",
     "sequelize": "^6.6.5"
   },
   "devDependencies": {
