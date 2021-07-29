@@ -3,16 +3,16 @@ import { useState, useEffect } from 'react'
 import { Link, useRouteMatch } from 'react-router-dom'
 import axios from 'axios'
 
-import './Lista.css'
+import './ListaAlunos.css'
 
-export default function Lista(){
+export default function ListaAlunos(){
 
     const match = useRouteMatch();
-    const [lista, setLista] = useState(false);
+    const [alunos, setAlunos] = useState(false);
 
         useEffect(() => {
             axios.get('/users')
-            .then((res) => setLista(res.data))
+            .then((res) => setAlunos(res.data))
             .catch((err) => console.log(err.response))
         }, []);
 
@@ -24,17 +24,17 @@ export default function Lista(){
     //     }, []); 
     // }
 
-    let loadedListUsers = [];
+    let loadedListAlunos = [];
     const UserToListGroupItem = (element, index) => 
         <Link to={`${match.path}/user/${element.id}`}>
             <ListGroup.Item>{element.name}</ListGroup.Item>
         </Link>
     
-    if(lista) loadedListUsers = lista.map(UserToListGroupItem);
+    if(alunos) loadedListAlunos = alunos.map(UserToListGroupItem);
 
     return(
         <ListGroup >
-            {loadedListUsers}
+            {loadedListAlunos}
         </ListGroup>
     )
 };

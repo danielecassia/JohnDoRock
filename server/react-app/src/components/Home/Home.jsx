@@ -6,7 +6,8 @@ import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Logo from '../../assets/logonova.png';
 import './Home.css';
 
-import Lista from './Lista/Lista';
+import ListaAlunos from './ListaAlunos/ListaAlunos';
+import ListaProfessores from './ListaProfessores/ListaProfessores';
 
 export default function Home(){
     const [user, setUser] = useState(false);
@@ -36,7 +37,6 @@ export default function Home(){
       />
       </Navbar.Brand>
         <Nav className="me-auto">
-          <Nav.Link> {user.data_nasc} </Nav.Link>
           <Nav.Link> {user.name} </Nav.Link>
           <Nav.Link> {user.email} </Nav.Link>
           <Button variant="danger" onClick={() => handleLogout()}>Logout</Button> 
@@ -45,11 +45,9 @@ export default function Home(){
       </Navbar>
 
       <div>
-        <Lista/>
+        <ListaAlunos/>
+        <ListaProfessores/>
       </div>
     </div>
-    
-
-    
     )
 }
