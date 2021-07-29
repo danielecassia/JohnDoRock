@@ -30,7 +30,7 @@ export default function Home() {
   };
 
   return (
-    <Container className="home">
+    <div className='Home'>
       <NavBar/>
       <Container maxWidth="md">
         <div className='Listas'>
@@ -46,6 +46,6 @@ export default function Home() {
 
         </div>
       </Container>
-    </Container>
+    </div>
   )
 }
