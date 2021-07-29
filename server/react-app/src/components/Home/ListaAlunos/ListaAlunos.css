@@ -2,6 +2,46 @@
     color: #111111;
     border-color: white;
 }
+
 .card {
-    margin: auto;
-}
+    position: relative;
+    width: 200px !important;
+    box-shadow: 0 0 5px 0px #e2e2e2;
+    cursor: pointer;
+    
+  }
+
+  .text {
+    margin: 20px auto;
+  }
+
+  .card:after,
+  .card:before {
+    bottom: 0;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .card:before {
+    border-left: 1px solid #dba520;
+    border-right: 1px solid #dba520;
+    transform: scaleY(0);
+  }
+
+  .card:after {
+    border-bottom: 1px solid #dba520;
+    border-top: 1px solid #dba520;
+    transform: scaleX(0);
+  }
+
+  .card:hover:before {
+    transform: scaleY(1);
+  }
+
+  .card:hover:after {
+    transform: scaleX(1);
+  }

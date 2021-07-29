@@ -1,4 +1,4 @@
-import { ListGroup } from 'react-bootstrap'
+import { ListGroup, Table } from 'react-bootstrap'
 import { useState, useEffect } from 'react'
 import { Link, useRouteMatch } from 'react-router-dom'
 import axios from 'axios'
@@ -20,16 +20,42 @@ export default function Lista(){
 
 
     let loadedProffs = [];
-    const UserToListGroupItem = (element, index) => 
-        <Link to={`${match.path}/user/${element.id}`} style={{ textDecoration: 'none' }} >
-            <ListGroup.Item>{element.name}</ListGroup.Item>
-        </Link>
+    const UserToListGroupItem = (element, index) =>
+        <tr>
+            <td>
+                <Link to={`${match.path}/user/${element.id}`} style={{ textDecoration: 'none' }} >
+                    {element.id}
+                </Link>
+            </td>
+            <td>
+                <Link to={`${match.path}/user/${element.id}`} style={{ textDecoration: 'none' }} >
+                   {element.name}
+                </Link>
+            </td>
+            <td>
+                <Link to={`${match.path}/user/${element.id}`} style={{ textDecoration: 'none' }} >
+                    {element.email}
+                </Link>
+            </td>
+        </tr>
+
     
     if(professores) loadedProffs = professores.map(UserToListGroupItem);
 
     return(
         <ListGroup >
-            {loadedProffs}
+            <Table striped bordered hover size="sm">
+                <thead>
+                    <tr>
+                    <th>Identificação</th>
+                    <th>Nome</th>
+                    <th>E-mail</th>
+                    </tr>
+                </thead>
+                <tbody> 
+                    {loadedProffs}
+                </tbody>
+            </Table>
         </ListGroup>
     )
 };
