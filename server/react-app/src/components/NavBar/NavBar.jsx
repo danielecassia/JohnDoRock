@@ -27,7 +27,7 @@ export default function NavBar() {
     // </Nav>
 
     <div className='NavBar'>
-      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+      <Navbar collapseOnSelect expand="lg">
         <Navbar.Brand>
           <img
             src={Logo}
@@ -39,7 +39,7 @@ export default function NavBar() {
         </Navbar.Brand>
 
 
-      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+      <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
 
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="me-auto">
@@ -48,7 +48,7 @@ export default function NavBar() {
         </Nav>
         
         <Nav className="grupoUsuario">
-          <Button variant="danger" onClick={() => handleLogout()}>Sair</Button>
+          <Button variant="warning" onClick={() => handleLogout()}>Sair</Button>
         </Nav>
       </Navbar.Collapse>
       </Navbar>

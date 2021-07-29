@@ -4,8 +4,9 @@ export default function Welcome() {
   return(
     <div className="Welcome">
       <p className="saudacao">
-        Acesse sua conta
+        Bem Vindo!
       </p>
+      
     </div>
   )
 } 

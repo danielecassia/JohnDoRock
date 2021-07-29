@@ -1,3 +1,6 @@
+.NavBar {
+  background-color: #111;
+}
 .navbar-brand{
   padding: 5px 10px;
 }
@@ -20,4 +23,8 @@
 
 .LinkNavBar {
   color: silver !important;
+}
+
+.grupoUsuario Button{
+  background-color: #dba520;
 }
