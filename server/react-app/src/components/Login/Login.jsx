@@ -10,7 +10,7 @@ export default function Login() {
   .catch((err) => console.log("NAO TA LOGADO"));
   return(
     <div className="Login">
-      <section className="container">
+      <section className="teste">
       <div className="left">
         <Welcome />
       </div>

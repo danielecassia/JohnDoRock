@@ -31,8 +31,8 @@ export default function Form() {
         <div className="container2">
           <img src={Logo} 
             alt="logo"
-            width="406px"
-            height="313px"
+            width="50%"
+            height="50%"
             padding="0"
           />
           <br/>

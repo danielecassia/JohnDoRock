@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const UserService = require('../service/UserService');
+
 const {
   jwtMiddleware,
   notLoogedIn,
@@ -45,6 +46,24 @@ router.get('/user/:id', jwtMiddleware, async (req, res, next) => {
     const user = await UserService.getUserById(userId);
 
     res.status(200).json(user);
+  } catch (error) {
+    next(error);
+  }
+});
+
+router.get('/professores', jwtMiddleware, async (req, res, next) => {
+  try {
+    const users = await UserService.getProfessores();
+    res.status(200).json(users);
+  } catch (error) {
+    next(error);
+  }
+});
+
+router.get('/ultimosalunos', jwtMiddleware, async (req, res, next) => {
+  try {
+    const users = await UserService.getUltimosAlunos();
+    res.status(200).json(users);
   } catch (error) {
     next(error);
   }

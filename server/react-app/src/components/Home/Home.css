@@ -1,7 +1,18 @@
-.Home{
+.Home {
   height: 100%;
 }
+.container {
+  background-color:#f5f5f5;
+}
 
-.navbar{
-  color: #fff;
+.Listas {
+  margin: auto;
+}
+.Listas h2 {
+  padding-top: 20px;
+  box-align: center;
+}
+
+.input {
+  color: black;
 }

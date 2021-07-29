@@ -36,6 +36,36 @@ class UserService {
     return user;
   }
 
+  async getProfessores() {
+    return await User.findAll({
+      raw: true,
+      where: {
+        cargo: 'professor',
+      },
+      attributes: {
+      exclude:
+        ['senha', 'createdAt', 'updatedAt'],
+    },
+    });
+  }
+
+  async getUltimosAlunos() {
+    return await User.findAll({
+      raw: true,
+      where: {
+        cargo: 'aluno',
+      },
+      limit: 5,
+      order: [
+        ['id', 'DESC'],
+      ],
+      attributes: {
+      exclude:
+        ['senha', 'createdAt', 'updatedAt'],
+    },
+    });
+  }
+  
   async updateUser(id, reqUserId, reqUserRole, body) {
     const user = await User.findByPk(id);
     if(!user){
