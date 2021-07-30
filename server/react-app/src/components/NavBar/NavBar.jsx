@@ -27,7 +27,7 @@ export default function NavBar() {
     // </Nav>
 
     <div className='NavBar'>
-      <Navbar collapseOnSelect expand="lg">
+      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Navbar.Brand>
           <img
             src={Logo}
