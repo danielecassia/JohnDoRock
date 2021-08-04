@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
-import { Button, Container, Form, FormControl, Row } from 'react-bootstrap'
+import { Container, Row } from 'react-bootstrap'
 import axios from 'axios';
 import { useHistory } from 'react-router';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import NavBar from '../NavBar/NavBar';
 import './Home.css';
 
@@ -10,24 +9,13 @@ import ListaAlunos from './ListaAlunos/ListaAlunos';
 import ListaProfessores from './ListaProfessores/ListaProfessores';
 
 export default function Home() {
+  const history = useHistory();
   const [user, setUser] = useState(false);
   useEffect(() => {
     axios.get('/users/me')
       .then((res) => setUser(res.data))
       .catch((err) => history.push('/'));
   });
-
-  const history = useHistory();
-  function handleLogout() {
-    axios.get('/users/logout');
-    history.push('/');
-  }
-
-  const [searchTerm, setSearchTerm] = useState("");
-  const [searchResults, setSearchResults] = useState([]);
-  const handleChange = event => {
-    setSearchTerm(event.target.value);
-  };
 
   return (
     <div className='Home'>

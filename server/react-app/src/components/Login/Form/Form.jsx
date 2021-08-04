@@ -45,11 +45,6 @@ export default function Form() {
           <div id="Password">
             <input id="form-bottom" type="password" placeholder="Digite sua senha" name="password" 
             required onChange = {handlePasswordChange} value={senha}/>
-            {/* <span className="forgotpsw">
-              <Link to="/"> 
-                Esqueci minha senha
-              </Link>
-            </span> */}
           </div>
             <button type="submit">Entrar</button>
             <button type="submit">Cadastrar</button>

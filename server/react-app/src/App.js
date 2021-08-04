@@ -7,6 +7,7 @@ import {
 
 import Login from './components/Login/Login';
 import Home from './components/Home/Home';
+import Cadastro from './components/Cadastro/Cadastro';
 import './App.css';
 
 function App() {
@@ -18,6 +19,9 @@ function App() {
         <Switch>
           <Route path="/home"> 
             <Home />
+          </Route> 
+          <Route path="/cadastro"> 
+            <Cadastro />
           </Route> 
           <Route path="/"> 
             <Login />
