@@ -1,14 +1,14 @@
-const bcrypt = require('bcrypt');
-const PermissionError = require('../../errors/PermissionError');
-const QueryError = require('../../errors/QueryError');
-const Aluno = require('../model/Aluno');
+// const bcrypt = require('bcrypt');
+// const PermissionError = require('../../errors/PermissionError');
+// const QueryError = require('../../errors/QueryError');
+// const Aluno = require('../model/Aluno');
 
-class AlunoService {
-  async createAluno(aluno) {
-    const saltRounds = 10;
-    aluno.senha = await bcrypt.hash(aluno.senha, saltRounds);
-    await Aluno.create(aluno);
-  }
+// class AlunoService {
+//   async createAluno(aluno) {
+//     const saltRounds = 10;
+//     aluno.senha = await bcrypt.hash(aluno.senha, saltRounds);
+//     await Aluno.create(aluno);
+//   }
 
   // async getAllUsers() {
   //   return await User.findAll({
@@ -113,4 +113,4 @@ class AlunoService {
   // }
 }
 
-module.exports = new AlunoService();
+// module.exports = new AlunoService();

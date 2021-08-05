@@ -1,112 +1,33 @@
-.FormCadastro {
-  background-color: #111111;
+.Cadastro {
+  height: 100vh;
+  font-family: Nunito Sans;
+  background-color: #111;
+}
+
+.teste {
   height: 100%;
-  margin: 0;
-}
-
-.FormCadastro img {
-  max-width: 250px;
-  margin: auto;
-  display: block;
-}
-
-.FormCadastro input[type=date], .FormCadastro select {
-  background-color: transparent;
-  color: #fff;
-  border-color: #dba520;
-  padding: 5px;
-}
-
-.container2 {
-  padding: 25px 50px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.FormCadastro ::x {
-  color: #fff;
-  font-size: 16px;
-  opacity: 0.8;
-}
-  
-.FormCadastro select{
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;       /* Remove default arrow */
-  background-color: #111;   /* Add custom arrow */
-  color: #fff;
-  border-color: #dba520;
-  padding: 5px;
-}
-
-.FormCadastro button {
-  background-color: #dba520;
-  color: white;
-  padding: 12px 18px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  height: 20%;
-  width: 35%;
-  font-size: 120%;
-  border-radius: 24px;
-  text-align: center;
-  transition: all 500ms;
-  margin-right: 20px;  margin-left: 20px;
-  margin-top: 30px;
-}
-
-.FormCadastro button:hover {
-  transform: scale(0.98);
-  transition: all 500ms;
-}
-
-input[type=text], input[type=password] {
-  display: block;
   width: 100%;
-  margin: 15px 0;
-
-  color: #fff;
-  caret-color: blue;
-  background-color: transparent;
-  
-  outline: none;
-  outline-style: none;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  border-bottom: solid #dba520 1px;
-  padding: 3px 0px;
-
-  font-size: 0.9em;
+  display: flex;
+  flex: 1;
 }
 
-.FormCadastro input[type=text], .Form input[type=password] {
-  caret-color: #fff;
+
+.tamanho {
+  color: #dddddd;
+  width: 80%;
+  height: 100%;
+  margin: auto;
+  /* background-color: white; */
 }
 
-.FormCadastro input[type="date"]::-webkit-calendar-picker-indicator {
-    filter: invert(1);
-}
+/* Sumindo com o Welcome no mobile */
 
-.FormCadastro ::x {
-  color: #fff;
-  font-size: 16px;
-  opacity: 0.8;
-}
-#form-bottom {
-  margin-bottom: 5%;
-}
+@media screen and (max-width: 960px) {
+  .left {
+    display: none;
+  }
 
-.FormCadastro a:hover {
-  opacity: 0.8;
-}
-.FormCadastro a:active {
-  opacity: 0.6;
-}
-
-input:-webkit-autofill {
-  -webkit-text-fill-color: #fff !important;
-  -webkit-text-size-adjust: larger !important;
-  -webkit-box-shadow: 0 0 0 30px #111111 inset;
+  .right {
+    width: 100%;
+  }
 }

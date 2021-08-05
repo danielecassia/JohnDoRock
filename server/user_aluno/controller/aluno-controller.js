@@ -1,35 +1,35 @@
-const router = require('express').Router();
-const UserService = require('../service/UserService');
+// const router = require('express').Router();
+// const AlunoService = require('../service/AlunoService');
+// const {
+//   jwtMiddleware,
+//   notLoogedIn,
+//   loginMiddleware,
+//   checkRole,
+// } = require('../../middlewares/auth-middlewares');
+// const objectFilter = require('../../middlewares/object-filter');
+// const userValidate = require('../../middlewares/user-validator');
 
-const {
-  jwtMiddleware,
-  notLoogedIn,
-  loginMiddleware,
-  checkRole,
-} = require('../../middlewares/auth-middlewares');
-const objectFilter = require('../../middlewares/object-filter');
-const userValidate = require('../../middlewares/user-validator');
+// router.post('/aluno',
+//   objectFilter('body', ['name', 'email', 'data_nasc', 'senha']),
+//   userValidate('createUser'),
+//   async (req, res, next) => {
+//     try {
+//       const user = await User.findByPk(id, {
+//         raw: true,
+//         attributes:
+//       {
+//         exclude:
+//           ['senha', 'createdAt', 'updatedAt'],
+//       },
+//       });
 
-router.post('/',
-  objectFilter('body', ['name', 'email', 'data_nasc', 'senha']),
-  userValidate('createUser'),
-  async (req, res, next) => {
-    try {
-      const user = {
-        name: req.body.name,
-        email: req.body.email,
-        senha: req.body.senha,
-        data_nasc: req.body.data_nasc,
-        cargo: 'aluno',
-      };
+//       await AlunoService.createUser(user);
 
-      await UserService.createUser(user);
-
-      res.status(201).end();
-    } catch (error) {
-      next(error);
-    }
-  });
+//       res.status(201).end();
+//     } catch (error) {
+//       next(error);
+//     }
+//   });
 
 // router.get('/', jwtMiddleware, async (req, res, next) => {
 //   try {
@@ -115,4 +115,4 @@ router.post('/',
 //   }
 // });
 
-module.exports = router;
+// module.exports = router;

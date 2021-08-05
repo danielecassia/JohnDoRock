@@ -11,7 +11,7 @@ const objectFilter = require('../../middlewares/object-filter');
 const userValidate = require('../../middlewares/user-validator');
 
 router.post('/',
-  objectFilter('body', ['name', 'email', 'data_nasc', 'senha']),
+  objectFilter('body', ['name', 'email', 'data_nasc', 'senha', 'cargo']),
   userValidate('createUser'),
   async (req, res, next) => {
     try {
@@ -20,7 +20,7 @@ router.post('/',
         email: req.body.email,
         senha: req.body.senha,
         data_nasc: req.body.data_nasc,
-        cargo: 'aluno',
+        cargo: req.body.cargo,
       };
 
       await UserService.createUser(user);
@@ -51,18 +51,18 @@ router.get('/user/:id', jwtMiddleware, async (req, res, next) => {
   }
 });
 
-router.get('/professores', jwtMiddleware, async (req, res, next) => {
+router.get('/ultimosalunos', jwtMiddleware, async (req, res, next) => {
   try {
-    const users = await UserService.getProfessores();
+    const users = await UserService.getUltimosAlunos();
     res.status(200).json(users);
   } catch (error) {
     next(error);
   }
 });
 
-router.get('/ultimosalunos', jwtMiddleware, async (req, res, next) => {
+router.get('/professores', jwtMiddleware, async (req, res, next) => {
   try {
-    const users = await UserService.getUltimosAlunos();
+    const users = await UserService.getProfessores();
     res.status(200).json(users);
   } catch (error) {
     next(error);

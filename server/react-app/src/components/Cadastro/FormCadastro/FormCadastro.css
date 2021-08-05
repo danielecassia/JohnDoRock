@@ -1,0 +1,149 @@
+.FormCadastro {
+  padding: auto;
+  padding-top: 1%;
+  background-color: #242424;
+  height: 100%;
+  width: 100%;
+  margin: auto;
+}
+
+.FormCadastro div{
+  margin-top: 2%;
+}
+
+.FormCadastro img {
+  max-width: 250px;
+  margin: auto;
+  display: block;
+  padding: 0;
+}
+
+.FormularioCadastro {
+  height: 100%;
+  width: 70%;
+  margin: auto;
+  margin-top:3%;
+}
+
+.FormCadastro button {
+  background-color: #dba520;
+  color: white;
+  padding: 10px 40px;
+  border-radius: 24px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.FormCadastro button:hover {
+  transform: scale(0.98);
+  transition: all 500ms;
+}
+
+input[type=text], input[type=password] {
+  display: block;
+  width: 100%;
+  margin: 15px 0;
+
+  color: white;
+  caret-color: blue;
+  background-color: transparent;
+  
+  outline: none;
+  outline-style: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: solid #dba520 1px;
+  padding: 3px 0px;
+
+  font-size: 0.9em;
+}
+
+.FormCadastro input[type=text], .Form input[type=password] {
+  caret-color: #fff;
+}
+
+.FormCadastro input[type=date], .FormCadastro input[type=date]::-webkit-datetime-edit {
+  background-color:#242424;
+  color:white;
+  width: 100%;
+  height: 50%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  padding: 0px 5px;
+}
+
+.FormCadastro input[type=date]{
+  border: 1px solid #dba520;
+  outline: none;
+  outline-style: none;
+}
+
+.FormCadastro input[type=date]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+.FormCadastro select{
+  background-color: #242424;
+  color:white;
+  width: 100%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  padding: 5px 1px;
+  border: 1px solid #dba520;
+}
+
+
+
+#Email {
+  padding-bottom: 4%;
+  font-size: larger;
+  color: #fff;
+}
+
+#Password {
+  padding-bottom: 4%;
+  font-size: larger;
+  color: #fff;
+}
+
+/* .Form ::x {
+  color: #fff;
+  font-size: 16px;
+  opacity: 0.8;
+} */
+
+.containerCadastro {
+  padding: 0;
+  margin: auto;
+}
+
+#form-bottom {
+  margin-bottom: 5%;
+}
+
+span.password *{
+  opacity: 0.56;
+  margin-top: 0%;
+  font-size: 14px;
+  display: block;
+  padding-bottom: 8px;
+  text-decoration: none;
+}
+
+.Form a:hover {
+  opacity: 0.8;
+}
+.Form a:active {
+  opacity: 0.6;
+}
+
+input:-webkit-autofill {
+  -webkit-text-fill-color: #fff !important;
+  -webkit-text-size-adjust: larger !important;
+  -webkit-box-shadow: 0 0 0 30px #111111 inset;
+}
+
+/* .divBotoes{
+  width: 100%;
+} */

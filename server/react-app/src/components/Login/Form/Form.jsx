@@ -25,6 +25,11 @@ export default function Form() {
     .catch((err) => alert(err));
   }
 
+  // function handleCadastro(event){
+  //   axios.post('/users/login').then((res) => history.push('/cadastro'))
+  //   .catch( (err) => console.log(err.response) )
+  // }
+
   return(
     <div className="Form">
       <form method="POST" onSubmit={handleSubmit}>
