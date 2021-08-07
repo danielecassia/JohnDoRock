@@ -1,0 +1,25 @@
+.cardsPerfilAluno{
+  width: 100%;
+  padding: 10px;
+}
+
+.cardsFotoPerfilAluno{
+  width: 100%;
+  align-items: left;
+  float: left;
+  margin: auto;
+  margin-top: 2%;
+}
+
+.cardPerfil {
+    position: relative;
+    height: 100% !important;
+    width: 100% !important;
+    margin: auto;
+    padding: 10px;
+}
+
+.FotoPerfilAluno{
+  margin-bottom: 5px;
+  margin-right: 5px;;
+}

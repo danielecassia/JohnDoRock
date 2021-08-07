@@ -7,12 +7,12 @@ import Logo from '../../assets/logonova.png';
 import './NavBar.css'
 
 export default function NavBar() {
-  const [user, setUser] = useState(false);
-  useEffect(() => {
-    axios.get('/users/me')
-      .then((res) => setUser(res.data))
-      .catch((err) => history.push('/'));
-  });
+  // const [user, setUser] = useState(false);
+  // useEffect(() => {
+  //   axios.get('/users/me')
+  //     .then((res) => setUser(res.data))
+  //     .catch((err) => history.push('/'));
+  // });
 
   const history = useHistory();
   function handleLogout() {

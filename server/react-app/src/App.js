@@ -8,6 +8,7 @@ import {
 import Login from './components/Login/Login';
 import Home from './components/Home/Home';
 import Cadastro from './components/Cadastro/Cadastro';
+import Perfil from './components/Perfil/PerfilAluno/PerfilAluno'
 import './App.css';
 
 function App() {
@@ -17,6 +18,9 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
+        <Route path="/perfil"> 
+            <Perfil />
+          </Route> 
           <Route path="/home"> 
             <Home />
           </Route> 

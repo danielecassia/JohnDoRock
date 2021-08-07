@@ -136,8 +136,9 @@ export default function FormCadastro() {
               <Col>
                 <div id="Cargo">
                   Usuário
-                  <select name="cargo" className="me-sm-2" id="inlineFormCustomSelect" onChange={inputChange} placeholder>
+                  <select name="cargo" className="me-sm-2" required id="inlineFormCustomSelect" onChange={inputChange} placeholder>
                     {/* <option value="">Cargo</option> */}
+                    <option value=""></option>
                     <option value="aluno">Aluno</option>
                     <option value="professor">Professor</option>
                   </select>
