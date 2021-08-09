@@ -5,12 +5,10 @@ import { useHistory } from 'react-router-dom';
 
 export default function Login() {
   const history = useHistory();
-  axios.get('/users/me').then((res) => history.push('/cadastro'))
-  .catch((err) => console.log("NAO TA LOGADO"));
+  axios.get('/users/me').then((res) => history.push('/cadastro'));
   return(
     <div className="Cadastro">
-      <section className="teste">
-      
+      <section className="sectionCadastro">
       <div className="tamanho">
         <FormCadastro/>
       </div>

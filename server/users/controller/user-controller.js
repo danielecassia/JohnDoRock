@@ -11,7 +11,7 @@ const objectFilter = require('../../middlewares/object-filter');
 const userValidate = require('../../middlewares/user-validator');
 
 router.post('/',
-  objectFilter('body', ['name', 'email', 'data_nasc', 'senha', 'cargo']),
+  objectFilter('body', ['name', 'email', 'data_nasc', 'senha', 'cargo', 'instrumento']),
   userValidate('createUser'),
   async (req, res, next) => {
     try {
@@ -21,10 +21,19 @@ router.post('/',
         senha: req.body.senha,
         data_nasc: req.body.data_nasc,
         cargo: req.body.cargo,
+        instrumento: req.body.instrumento,
       };
 
       await UserService.createUser(user);
 
+      // const aluno = {
+      //   id:,
+      //   instrumento: req.body.instrumento,
+      // };
+      // if(req.body.cargo == "aluno"){
+      //    await UserService.createAluno(aluno);
+      //}
+  
       res.status(201).end();
     } catch (error) {
       next(error);

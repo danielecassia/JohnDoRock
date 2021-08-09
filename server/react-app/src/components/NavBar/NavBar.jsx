@@ -1,7 +1,6 @@
 import { useHistory } from 'react-router';
-import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Nav, Button, Container, Navbar } from 'react-bootstrap';
+import { Nav, Button, Navbar } from 'react-bootstrap';
 import Logo from '../../assets/logonova.png';
 
 import './NavBar.css'

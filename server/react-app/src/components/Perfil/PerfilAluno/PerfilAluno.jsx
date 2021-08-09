@@ -1,7 +1,7 @@
 import './PerfilAluno.css'
 import NavBar from '../../NavBar/NavBar';
 import Logo from '../../../assets/fotoperfil.jpg';
-import { Nav, Card, Col, Container } from 'react-bootstrap';
+import { Card, Container } from 'react-bootstrap';
 
 export default function PerfilAluno() {
   return(

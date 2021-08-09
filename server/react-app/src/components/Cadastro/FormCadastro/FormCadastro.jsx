@@ -36,60 +36,17 @@ export default function FormCadastro() {
       
     if(event.target.name === "data_nasc")
       setFormValues({...formValues, data_nasc: event.target.value})
-    console.log(formValues)
+    // console.log(formValues)
   }
 
   const handleSubmit = (event) => {
     event.preventDefault();
     axios.post('/users', formValues)
-      .then( (res) => console.log(res) )
-        // if(formValues.cargo === 'aluno'){
-        //   axios.post('/users/aluno', formValues).then().catch((err) => console.log(err.response))
-        // }
-        // else if(formValues.cargo === 'professor'){
-        //   axios.post('/users/professor', formValues).then().catch((err) => console.log(err.response))
-        // }
+      .then( (res) => {
+        console.log(res);
+      })
       .catch( (err) => console.log(err.response) )
-
-    
   }
-
-  // const [email, setEmail] = useState('');
-  // const [senha, setSenha] = useState('');
-  // const [cargo, setCargo] = useState('');
-  // const [data_nasc, setDataNasc] = useState('');
-  // const [nome, setNome] = useState('');
-  // const [instrumento, setInstrumento] = useState('');
-
-  // function handleEmailChange(event) {
-  //   setEmail(event.target.value);
-  // }
-
-  // function handlePasswordChange(event) {
-  //   setSenha(event.target.value);
-  // }
-
-  // function handleCargoChange(event) {
-  //   setCargo(event.target.value);
-  // }
-
-  // function handleDataNascChange(event) {
-  //   setDataNasc(event.target.value);
-  // }
-
-  // function handleNomeChange(event) {
-  //   setNome(event.target.value);
-  // }
-
-  // function handleInstrumentoChange(event) {
-  //   setInstrumento(event.target.value);
-  // }
-
-  // function handleSubmit(event) {
-  //   event.preventDefault();
-  //   axios.post('/users', { email, senha }).then((res) => history.push('/home'))
-  //     .catch((err) => alert(err));
-  // }
 
   return (
     <div className="FormCadastro">

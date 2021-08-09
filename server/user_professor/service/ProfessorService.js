@@ -1,5 +1,5 @@
 // const bcrypt = require('bcrypt');
-// const User = require('../model/User');
+// const Professor = require('../model/Professor');
 // const PermissionError = require('../../errors/PermissionError');
 // const QueryError = require('../../errors/QueryError');
 

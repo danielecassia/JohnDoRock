@@ -1,13 +1,13 @@
 import { Card, Col } from 'react-bootstrap'
 import { useState, useEffect } from 'react'
-import { useRouteMatch } from 'react-router-dom'
+// import { useRouteMatch } from 'react-router-dom'
 import axios from 'axios'
 
 import './ListaAlunos.css'
 
 export default function ListaAlunos() {
 
-    const match = useRouteMatch();
+    // const match = useRouteMatch();
     const [alunos, setAlunos] = useState(false);
 
     useEffect(() => {

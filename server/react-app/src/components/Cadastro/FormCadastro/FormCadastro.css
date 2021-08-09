@@ -1,5 +1,5 @@
 .FormCadastro {
-  padding: auto;
+  padding: 5%;
   padding-top: 1%;
   background-color: #242424;
   height: 100%;
@@ -7,9 +7,9 @@
   margin: auto;
 }
 
-.FormCadastro div{
+/* .FormCadastro div{
   margin-top: 2%;
-}
+} */
 
 .FormCadastro img {
   max-width: 250px;
@@ -19,19 +19,17 @@
 }
 
 .FormularioCadastro {
-  height: 100%;
   width: 70%;
   margin: auto;
-  margin-top:3%;
 }
 
 .FormCadastro button {
   background-color: #dba520;
   color: white;
-  padding: 10px 40px;
+  padding: 0.7em 3em;
   border-radius: 24px;
   text-align: center;
-  margin-top: 30px;
+  margin-top: 2em;
 }
 
 .FormCadastro button:hover {
@@ -47,15 +45,13 @@ input[type=text], input[type=password] {
   color: white;
   caret-color: blue;
   background-color: transparent;
-  
   outline: none;
   outline-style: none;
-  border-top: none;
+  /* border-top: none;
   border-left: none;
-  border-right: none;
+  border-right: none; */
   border-bottom: solid #dba520 1px;
   padding: 3px 0px;
-
   font-size: 0.9em;
 }
 
@@ -70,7 +66,7 @@ input[type=text], input[type=password] {
   height: 50%;
   margin-top: 1%;
   margin-bottom: 1%;
-  padding: 0px 5px;
+  padding: 1px 5px;
 }
 
 .FormCadastro input[type=date]{
@@ -114,8 +110,8 @@ input[type=text], input[type=password] {
 } */
 
 .containerCadastro {
-  padding: 0;
-  margin: auto;
+  padding: 0.8em 0;
+  margin: 0 auto;
 }
 
 #form-bottom {

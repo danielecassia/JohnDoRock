@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import './Form.css';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 import Logo from '../../../assets/john_do_rock_cortada.png';
 import axios from 'axios';
+import {} from 'react-bootstrap'
 
 export default function Form() {
 
@@ -52,7 +53,7 @@ export default function Form() {
             required onChange = {handlePasswordChange} value={senha}/>
           </div>
             <button type="submit">Entrar</button>
-            <button type="submit">Cadastrar</button>
+            <Link to='/cadastro'><button>Cadastrar</button></Link>
           
           <br className="unselectable"/>
           <br className="unselectable"/>

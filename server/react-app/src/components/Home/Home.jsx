@@ -15,7 +15,7 @@ export default function Home() {
     axios.get('/users/me')
       .then((res) => setUser(res.data))
       .catch((err) => history.push('/'));
-  });
+  },[]);
 
   return (
     <div className='Home'>

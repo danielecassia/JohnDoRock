@@ -1,13 +1,29 @@
 const bcrypt = require('bcrypt');
 const User = require('../model/User');
+const Aluno = require('../../user_aluno/model/Aluno');
+const Professor = require('../../user_professor/model/Professor');
 const PermissionError = require('../../errors/PermissionError');
 const QueryError = require('../../errors/QueryError');
 
 class UserService {
   async createUser(user) {
-      const saltRounds = 10;
-      user.senha = await bcrypt.hash(user.senha, saltRounds);
-      await User.create(user);
+    const saltRounds = 10;
+    user.senha = await bcrypt.hash(user.senha, saltRounds);
+    const createdUser = await User.create(user);
+    if(createdUser.cargo == "aluno"){
+      const aluno = {
+        instrumento: user.instrumento,
+        UserId: createdUser.id,
+      };
+      await Aluno.create(aluno);
+    }
+    else if(createdUser.cargo == "professor"){
+      const professor = {
+        instrumento: user.instrumento,
+        UserId: createdUser.id,
+      };
+      await Professor.create(professor);
+    }
   }
 
   async getAllUsers() {
