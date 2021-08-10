@@ -1,25 +1,43 @@
-.cardsPerfilAluno{
-  width: 100%;
-  padding: 10px;
+.Container {
+  background-color: red;
+  position: relative;
+  height: 100%;
 }
 
-.cardsFotoPerfilAluno{
-  width: 100%;
-  align-items: left;
-  float: left;
-  margin: auto;
-  margin-top: 2%;
+.rowDados {
+  background-color: purple;
 }
-
-.cardPerfil {
-    position: relative;
-    height: 100% !important;
-    width: 100% !important;
-    margin: auto;
-    padding: 10px;
+/*Card com imagem*/
+.ColunaImg{
+  background-color: green;
+  margin-left: 25%;
 }
 
 .FotoPerfilAluno{
   margin-bottom: 5px;
   margin-right: 5px;;
+}
+
+.FotoPerfilAluno img{
+  width: 100%;
+  margin: 0%;
+  margin-bottom:5px;
+}
+
+.FotoPerfilAluno .Text{
+  color: purple;
+}
+
+/*Card Perfil*/
+
+.ColunaDados{
+  background-color: blue;
+}
+
+.cardPerfil {
+  position: relative;
+  height: 100% !important;
+  width: 100% !important;
+  margin: auto;
+  padding: 10px;
 }
