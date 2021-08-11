@@ -39,12 +39,17 @@ export default function FormCadastro() {
     // console.log(formValues)
   }
 
+  
+
   const handleSubmit = (event) => {
     event.preventDefault();
     axios.post('/users', formValues)
-      .then( (res) => {
-        console.log(res);
-      })
+      .then( 
+        // (res) => {
+        // console.log(res);
+        history.push('/')
+      // }
+      )
       .catch( (err) => console.log(err.response) )
   }
 

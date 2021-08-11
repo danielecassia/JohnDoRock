@@ -17,6 +17,12 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
+<<<<<<< HEAD
+=======
+          <Route path="/perfil"> 
+            <Perfil />
+          </Route> 
+>>>>>>> 1b471ff2b6efafe8ec18687faaaf5eac8dc224b6
           <Route path="/home"> 
             <Home />
           </Route> 

@@ -7,8 +7,6 @@ import './ListaProfessores.css'
 
 export default function Lista(){
 
-//criar rota para             axios.get('/todosProfessores')
-
     const match = useRouteMatch();
     const [professores, setProfessores] = useState(false);
 
@@ -31,6 +29,7 @@ export default function Lista(){
             <td>
                 <Link to={`/perfil/${element.UserId}`} style={{ textDecoration: 'none' }} >
                     {element.UserId}
+
                 </Link>
             </td>
         </tr>

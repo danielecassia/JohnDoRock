@@ -25,15 +25,6 @@ router.post('/',
       };
 
       await UserService.createUser(user);
-
-      // const aluno = {
-      //   id:,
-      //   instrumento: req.body.instrumento,
-      // };
-      // if(req.body.cargo == "aluno"){
-      //    await UserService.createAluno(aluno);
-      //}
-  
       res.status(201).end();
     } catch (error) {
       next(error);

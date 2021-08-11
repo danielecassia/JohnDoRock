@@ -2,9 +2,14 @@ import { useState, useEffect } from 'react';
 import { Container, Row } from 'react-bootstrap'
 import axios from 'axios';
 import { useHistory } from 'react-router';
+<<<<<<< HEAD
 import NavBar from './NavBar/NavBar';
 import Footer from './Footer/Footer'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+=======
+import NavBar from '../NavBar/NavBar';
+import Footer from '../Footer/Footer';
+>>>>>>> 1b471ff2b6efafe8ec18687faaaf5eac8dc224b6
 import './Home.css';
 
 import ListaAlunos from './ListaAlunos/ListaAlunos';
@@ -22,6 +27,7 @@ export default function Home() {
 
   return (
     <div className='Home'>
+<<<<<<< HEAD
       <NavBar user={user}/>
       <Container fixed className ="containerHome">
         <Router>
@@ -51,6 +57,25 @@ export default function Home() {
           </Router>
         </Container>
         <Footer/>
+=======
+      <NavBar/>
+      <Container maxWidth="md" className ="containerHome">
+        <div className='Listas'>
+          <h2> Últimos Alunos Cadastrados</h2>
+          <Container className ="containerAlunos"> 
+            <Row>
+              <ListaAlunos/>
+            </Row>
+          </Container>
+
+          <h2> Lista de Professores </h2>
+          <Container className ="containerProfessores"> 
+            <ListaProfessores/>
+          </Container>
+        </div>
+      </Container>
+      <Footer/>
+>>>>>>> 1b471ff2b6efafe8ec18687faaaf5eac8dc224b6
     </div>
   )
 }

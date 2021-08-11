@@ -1,7 +1,17 @@
 .Home {
   height: 100%;
 }
+<<<<<<< HEAD
 
+=======
+.containerHome {
+  background-color: #fff;
+  /* Isso muda o tamanho do cantainer */
+  padding: 0;
+  margin: 0 auto;
+  height: 80%;
+}
+>>>>>>> 1b471ff2b6efafe8ec18687faaaf5eac8dc224b6
 
 .Listas {
   margin: auto;
@@ -21,6 +31,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  /* background-color: red; */
 }
 
 .containerProfessores {
@@ -28,4 +39,9 @@
   flex-direction: row;
   justify-content: space-around;
   width: 50%;
+<<<<<<< HEAD
 }
+=======
+  /* background-color: purple; */
+}
+>>>>>>> 1b471ff2b6efafe8ec18687faaaf5eac8dc224b6
