@@ -43,7 +43,8 @@ export default function NavBar() {
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="me-auto">
           <Nav.Link className="LinkNavBar" href="#home">Home</Nav.Link>
-          <Nav.Link className="LinkNavBar" href="#pricing">Perfil</Nav.Link>
+          <Nav.Link className="LinkNavBar" href="#pricing" to='/perfil'>Perfil</Nav.Link>
+
         </Nav>
         
         <Nav className="grupoUsuario">

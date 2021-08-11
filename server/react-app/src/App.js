@@ -18,7 +18,7 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
-        <Route path="/perfil"> 
+          <Route path="/perfil"> 
             <Perfil />
           </Route> 
           <Route path="/home"> 

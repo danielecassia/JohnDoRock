@@ -7,14 +7,14 @@ import './ListaProfessores.css'
 
 export default function Lista(){
 
-//criar rota para             axios.get('/todosProfessores')
-
     const match = useRouteMatch();
     const [professores, setProfessores] = useState(false);
 
         useEffect(() => {
-            axios.get('users/professores')
-            .then((res) => setProfessores(res.data))
+            axios.get('/users/professores')
+            .then(
+                (res) => setProfessores(res.data)
+                )
             .catch((err) => console.log(err.response))
         }, []);
 
@@ -22,11 +22,6 @@ export default function Lista(){
     let loadedProffs = [];
     const UserToListGroupItem = (element, index) =>
         <tr>
-            <td>
-                <Link to={`${match.path}/user/${element.id}`} style={{ textDecoration: 'none' }} >
-                    {element.id}
-                </Link>
-            </td>
             <td>
                 <Link to={`${match.path}/user/${element.id}`} style={{ textDecoration: 'none' }} >
                    {element.name}
@@ -37,6 +32,11 @@ export default function Lista(){
                     {element.email}
                 </Link>
             </td>
+            <td>
+                <Link to={`${match.path}/user/${element.id}`} style={{ textDecoration: 'none' }} >
+                    {element.instrumento}
+                </Link>
+            </td>
         </tr>
 
     
@@ -44,12 +44,13 @@ export default function Lista(){
 
     return(
         <ListGroup >
-            <Table striped bordered hover size="sm">
+            <Table triped bordered hover>
                 <thead>
                     <tr>
-                    <th>Identificação</th>
                     <th>Nome</th>
                     <th>E-mail</th>
+                    <th>Instrumento</th>
+
                     </tr>
                 </thead>
                 <tbody> 

@@ -3,6 +3,7 @@ import { Container, Row } from 'react-bootstrap'
 import axios from 'axios';
 import { useHistory } from 'react-router';
 import NavBar from '../NavBar/NavBar';
+import Footer from '../Footer/Footer';
 import './Home.css';
 
 import ListaAlunos from './ListaAlunos/ListaAlunos';
@@ -20,20 +21,22 @@ export default function Home() {
   return (
     <div className='Home'>
       <NavBar/>
-      <Container maxWidth="md">
+      <Container maxWidth="md" className ="containerHome">
         <div className='Listas'>
-          <h2> Alunos </h2>
-          <Container>
+          <h2> Últimos Alunos Cadastrados</h2>
+          <Container className ="containerAlunos"> 
             <Row>
               <ListaAlunos/>
             </Row>
           </Container>
 
-          <h2> Professores </h2>
-          <ListaProfessores />
-
+          <h2> Lista de Professores </h2>
+          <Container className ="containerProfessores"> 
+            <ListaProfessores/>
+          </Container>
         </div>
       </Container>
+      <Footer/>
     </div>
   )
 }
