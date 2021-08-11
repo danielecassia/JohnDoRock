@@ -1,11 +1,12 @@
 import { useHistory } from 'react-router';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { Nav, Button, Navbar } from 'react-bootstrap';
-import Logo from '../../assets/logonova.png';
+import Logo from '../../../assets/logonova.png';
 
 import './NavBar.css'
 
-export default function NavBar() {
+export default function NavBar(props) {
   // const [user, setUser] = useState(false);
   // useEffect(() => {
   //   axios.get('/users/me')
@@ -28,13 +29,15 @@ export default function NavBar() {
     <div className='NavBar'>
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Navbar.Brand>
-          <img
-            src={Logo}
-            width='120px'
-            height='100px'
-            className='d-inline-block align-top'
-            alt=''
-          />
+          <Link to="/">
+            <img
+              src={Logo}
+              width='120px'
+              height='100px'
+              className='d-inline-block align-top'
+              alt=''
+            />
+          </Link>
         </Navbar.Brand>
 
 
@@ -43,7 +46,7 @@ export default function NavBar() {
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="me-auto">
           <Nav.Link className="LinkNavBar" href="#home">Home</Nav.Link>
-          <Nav.Link className="LinkNavBar" href="#pricing">Perfil</Nav.Link>
+          <Nav.Link className="LinkNavBar" href="#pricing" to='/perfil'>Perfil</Nav.Link>
         </Nav>
         
         <Nav className="grupoUsuario">

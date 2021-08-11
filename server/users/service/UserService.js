@@ -1,9 +1,11 @@
 const bcrypt = require('bcrypt');
+const { QueryTypes } = require('sequelize');
 const User = require('../model/User');
 const Aluno = require('../../user_aluno/model/Aluno');
 const Professor = require('../../user_professor/model/Professor');
 const PermissionError = require('../../errors/PermissionError');
 const QueryError = require('../../errors/QueryError');
+const sequelize = require('../../database/index');
 
 class UserService {
   async createUser(user) {
@@ -53,16 +55,12 @@ class UserService {
   }
 
   async getProfessores() {
-    return await User.findAll({
-      raw: true,
-      where: {
-        cargo: 'professor',
-      },
-      attributes: {
-      exclude:
-        ['senha', 'createdAt', 'updatedAt'],
-    },
-    });
+    return await sequelize.query(
+      "SELECT * FROM users AS u INNER JOIN professors AS p ON u.id = p.UserId",
+      {
+        type: QueryTypes.SELECT,
+      }
+    );
   }
 
   async getUltimosAlunos() {

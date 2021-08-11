@@ -23,7 +23,7 @@ export default function Form() {
   function handleSubmit(event){
     event.preventDefault();
     axios.post('/users/login', {email, senha}).then((res) => history.push('/home'))
-    .catch((err) => alert(err));
+    .catch((err) => alert(err.message));
   }
 
   // function handleCadastro(event){

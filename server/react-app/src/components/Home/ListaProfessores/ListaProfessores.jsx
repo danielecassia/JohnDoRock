@@ -12,29 +12,25 @@ export default function Lista(){
     const match = useRouteMatch();
     const [professores, setProfessores] = useState(false);
 
-        useEffect(() => {
-            axios.get('users/professores')
-            .then((res) => setProfessores(res.data))
-            .catch((err) => console.log(err.response))
-        }, []);
+    useEffect(() => {
+        axios.get('/users/professores')
+        .then(
+            (res) => setProfessores(res.data))
+        .catch((err) => console.log(err.response))
+    }, []); 
 
 
     let loadedProffs = [];
     const UserToListGroupItem = (element, index) =>
         <tr>
             <td>
-                <Link to={`${match.path}/user/${element.id}`} style={{ textDecoration: 'none' }} >
-                    {element.id}
-                </Link>
-            </td>
-            <td>
-                <Link to={`${match.path}/user/${element.id}`} style={{ textDecoration: 'none' }} >
+                <Link to={`/perfil/${element.UserId}`} style={{ textDecoration: 'none' }} >
                    {element.name}
                 </Link>
             </td>
             <td>
-                <Link to={`${match.path}/user/${element.id}`} style={{ textDecoration: 'none' }} >
-                    {element.email}
+                <Link to={`/perfil/${element.UserId}`} style={{ textDecoration: 'none' }} >
+                    {element.UserId}
                 </Link>
             </td>
         </tr>
@@ -43,19 +39,20 @@ export default function Lista(){
     if(professores) loadedProffs = professores.map(UserToListGroupItem);
 
     return(
-        <ListGroup >
-            <Table striped bordered hover size="sm">
-                <thead>
-                    <tr>
-                    <th>Identificação</th>
-                    <th>Nome</th>
-                    <th>E-mail</th>
-                    </tr>
-                </thead>
-                <tbody> 
-                    {loadedProffs}
-                </tbody>
-            </Table>
-        </ListGroup>
+        <div className='ListaProfessores'>
+            <ListGroup>
+                <Table triped bordered hover>
+                    <thead>
+                        <tr>
+                        <th>Nome</th>
+                        <th>Instrumento</th>
+                        </tr>
+                    </thead>
+                    <tbody> 
+                        {loadedProffs}
+                    </tbody>
+                </Table>
+            </ListGroup>
+        </div>
     )
 };

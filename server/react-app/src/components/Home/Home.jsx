@@ -2,11 +2,14 @@ import { useState, useEffect } from 'react';
 import { Container, Row } from 'react-bootstrap'
 import axios from 'axios';
 import { useHistory } from 'react-router';
-import NavBar from '../NavBar/NavBar';
+import NavBar from './NavBar/NavBar';
+import Footer from './Footer/Footer'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './Home.css';
 
 import ListaAlunos from './ListaAlunos/ListaAlunos';
 import ListaProfessores from './ListaProfessores/ListaProfessores';
+import PerfilAluno from './PerfilAluno/PerfilAluno';
 
 export default function Home() {
   const history = useHistory();
@@ -19,21 +22,35 @@ export default function Home() {
 
   return (
     <div className='Home'>
-      <NavBar/>
-      <Container maxWidth="md">
-        <div className='Listas'>
-          <h2> Alunos </h2>
-          <Container>
-            <Row>
-              <ListaAlunos/>
-            </Row>
-          </Container>
+      <NavBar user={user}/>
+      <Container fixed className ="containerHome">
+        <Router>
+            <Switch>
+              <Route path="/home"> 
+                <Container maxWidth="md" className ="containerHome">
+                  <div className='Listas'>
+                    <h2> Alunos </h2>
+                    <Container className ="containerAlunos">
+                      <Row>
+                        <ListaAlunos/>
+                      </Row>
+                    </Container >
 
-          <h2> Professores </h2>
-          <ListaProfessores />
+                    <h2> Professores </h2>
+                    <Container className ="containerProfessores">
+                      <ListaProfessores />
+                    </Container>
+                  </div>
+                </Container>
+              </Route>
 
-        </div>
-      </Container>
+              <Route path="/perfil/:id">
+                <PerfilAluno />
+              </Route>
+            </Switch>
+          </Router>
+        </Container>
+        <Footer/>
     </div>
   )
 }
