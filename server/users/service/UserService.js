@@ -55,23 +55,8 @@ class UserService {
   }
 
   async getProfessores() {
-<<<<<<< HEAD
     return await sequelize.query(
       "SELECT * FROM users AS u INNER JOIN professors AS p ON u.id = p.UserId",
-=======
-    // return await User.findAll({
-    //   raw: true,
-    //   where: {
-    //     cargo: 'professor',
-    //   },
-    //   attributes: {
-    //   exclude:
-    //     ['senha', 'createdAt', 'updatedAt'],
-    // },
-    // });
-    return await sequelize.query(
-      "SELECT * FROM Users AS u INNER JOIN Professors AS p ON u.id = p.UserId",
->>>>>>> 1b471ff2b6efafe8ec18687faaaf5eac8dc224b6
       {
         type: QueryTypes.SELECT,
       }

@@ -47,10 +47,6 @@ export default function NavBar(props) {
         <Nav className="me-auto">
           <Nav.Link className="LinkNavBar" href="#home">Home</Nav.Link>
           <Nav.Link className="LinkNavBar" href="#pricing" to='/perfil'>Perfil</Nav.Link>
-<<<<<<< HEAD:server/react-app/src/components/Home/NavBar/NavBar.jsx
-=======
-
->>>>>>> 1b471ff2b6efafe8ec18687faaaf5eac8dc224b6:server/react-app/src/components/NavBar/NavBar.jsx
         </Nav>
         
         <Nav className="grupoUsuario">

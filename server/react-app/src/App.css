@@ -18,16 +18,8 @@ body {
 #root {
   height: 100%;
   /* cor de fundo da tela inteira */
-<<<<<<< HEAD
   background-color: #fff;
 }
-
-
-=======
-  background-color: #111111;
-}
-
->>>>>>> 1b471ff2b6efafe8ec18687faaaf5eac8dc224b6
 .App {
   text-align: center;
   height: 100%;
