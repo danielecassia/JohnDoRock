@@ -28,7 +28,7 @@ export default function Lista(){
             </td>
             <td>
                 <Link to={`/perfil/${element.UserId}`} style={{ textDecoration: 'none' }} >
-                    {element.UserId}
+                    {element.instrumento}
 
                 </Link>
             </td>

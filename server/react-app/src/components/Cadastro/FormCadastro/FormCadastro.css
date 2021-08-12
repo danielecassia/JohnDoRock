@@ -5,11 +5,9 @@
   height: 100%;
   width: 100%;
   margin: auto;
+  max-height: 100%;
 }
 
-/* .FormCadastro div{
-  margin-top: 2%;
-} */
 
 .FormCadastro img {
   max-width: 250px;
@@ -24,12 +22,12 @@
 }
 
 .FormCadastro button {
-  background-color: #dba520;
   color: white;
-  padding: 0.7em 3em;
+  padding: 0.6em 1em;
   border-radius: 24px;
   text-align: center;
-  margin-top: 2em;
+  margin-top: 4em;
+  margin-left: 2em;
 }
 
 .FormCadastro button:hover {
@@ -73,6 +71,7 @@ input[type=text], input[type=password] {
   border: 1px solid #dba520;
   outline: none;
   outline-style: none;
+  padding: 0.6% 1px;
 }
 
 .FormCadastro input[type=date]::-webkit-calendar-picker-indicator {
@@ -85,11 +84,9 @@ input[type=text], input[type=password] {
   width: 100%;
   margin-top: 1%;
   margin-bottom: 1%;
-  padding: 5px 1px;
+  padding: 2% 1px;
   border: 1px solid #dba520;
 }
-
-
 
 #Email {
   padding-bottom: 4%;
@@ -103,12 +100,6 @@ input[type=text], input[type=password] {
   color: #fff;
 }
 
-/* .Form ::x {
-  color: #fff;
-  font-size: 16px;
-  opacity: 0.8;
-} */
-
 .containerCadastro {
   padding: 0.8em 0;
   margin: 0 auto;
@@ -120,7 +111,7 @@ input[type=text], input[type=password] {
 
 span.password *{
   opacity: 0.56;
-  margin-top: 0%;
+  margin-top: 0;
   font-size: 14px;
   display: block;
   padding-bottom: 8px;
@@ -140,6 +131,11 @@ input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 30px #111111 inset;
 }
 
-/* .divBotoes{
-  width: 100%;
-} */
+Button a{
+  color: white !important;
+  text-decoration: none;
+}
+
+.botoes {
+  margin-right: 2em;
+}

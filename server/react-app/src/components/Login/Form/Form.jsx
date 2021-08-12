@@ -47,7 +47,7 @@ export default function Form() {
             <input id="form-bottom" type="password" placeholder="Digite sua senha" name="password" 
             required onChange = {handlePasswordChange} value={senha}/>
           </div>
-            <button type="submit">Entrar</button>
+            <button type="submit"><Link>Entrar</Link></button>
             <Link to='/cadastro'><button>Cadastrar</button></Link>
           
           <br className="unselectable"/>

@@ -103,8 +103,6 @@
   text-decoration: none;
 }
 
-
-
 .botoesFormPerfilAddProf button:hover {
   transform: scale(0.98);
   transition: all 500ms;
@@ -117,16 +115,10 @@
   /* background-color: red; */
 }
 
-form input{
+/* form input{
   color:black !important;
-}
+} */
 
-form input:-webkit-autofill {
-  -webkit-text-fill-color: #000 !important;
-  -webkit-text-size-adjust: larger !important;
-  -webkit-box-shadow: 0 0 0 30px #fff;
-  -webkit-background: #fff;
-}
 
 form input[type=date], form input[type=date]::-webkit-datetime-edit {
   color: gray;

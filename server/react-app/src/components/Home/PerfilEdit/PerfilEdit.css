@@ -124,28 +124,8 @@
   /* background-color: red; */
 }
 
-form input{
+#formPerfil{
   color:black !important;
-}
-
-input:-webkit-autofill {
-  -webkit-text-fill-color: #111 !important;
-  -webkit-text-size-adjust: larger !important;
-  -webkit-box-shadow: 0 0 0 30px #fff inset;
-}
-
-input[type=text]{
-  color: #fff;
-  caret-color: #fff;
-  background-color: transparent;
-  
-  outline: none;
-  outline-style: none;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  border-bottom: solid #dba520 1px;
-  font-size: 0.9em;
 }
 
 

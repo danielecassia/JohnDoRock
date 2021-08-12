@@ -53,7 +53,7 @@ class UserService {
     }
     if(user.cargo == 'professor') {
       const userEncontrado = await sequelize.query(
-        'SELECT * FROM users as u INNER JOIN professors as p ON u.id = p.UserId WHERE u.id = :id_search',
+        'SELECT * FROM Users as u INNER JOIN Professors as p ON u.id = p.UserId WHERE u.id = :id_search',
         {
           replacements: { id_search: iduser },
           type: QueryTypes.SELECT,
@@ -61,21 +61,11 @@ class UserService {
       );
       return userEncontrado;
     }
-    //``
-    // else if(cargo=='aluno') {
-    //   const userEncontrado = await sequelize.query(
-    //     `SELECT * FROM users WHERE id=${id}`,
-    //     {
-    //       type: QueryTypes.SELECT,
-    //     }
-    //   );
-    // }
-    // return user;
   }
 
   async getProfessores() {
     return await sequelize.query(
-      "SELECT * FROM users AS u INNER JOIN professors AS p ON u.id = p.UserId",
+      "SELECT * FROM Users AS u INNER JOIN Professors AS p ON u.id = p.UserId",
       {
         type: QueryTypes.SELECT,
       }

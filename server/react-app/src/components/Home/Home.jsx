@@ -38,7 +38,7 @@ export default function Home() {
 
                     <h2> Professores </h2>
                     <Container className ="containerProfessores">
-                      <ListaProfessores />
+                      <ListaProfessores/>
                     </Container>
                   </div>
                 </Container>

@@ -67,10 +67,10 @@ export default function PerfilAluno() {
           <Col xs lg="4" className = "ColunaDados">
                 <Card.Text className="cardPerfil">
                 <Form method="POST" onSubmit={handleSubmit} className="formAtualizar">
-                  <input name="name" type="text" placeholder={selectedUser ? selectedUser[0].name : ''} onChange={inputChange}/>
-                  {/* <input name="instrumento" type="text" placeholder={selectedUser ? selectedUser[0].instrumento : ''} onChange={inputChange}/> */}
+                  <input id="formPerfil" name="name" type="text" placeholder={selectedUser ? selectedUser[0].name : ''} onChange={inputChange}/>
+                  {/* <input id="formPerfil" name="instrumento" type="text" placeholder={selectedUser ? selectedUser[0].instrumento : ''} onChange={inputChange}/> */}
                   <br/>
-                  <input name="data_nasc" type="date" onChange={inputChange}/>
+                  <input id="formPerfil" name="data_nasc" type="date" onChange={inputChange}/>
                 </Form>
                   <div className="botoesFormPerfil">
                     <Button variant="primary" type="submit">Salvar</Button>  

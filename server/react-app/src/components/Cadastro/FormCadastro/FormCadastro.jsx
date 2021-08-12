@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './FormCadastro.css';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 import Logo from '../../../assets/john_do_rock_cortada.png';
 import axios from 'axios';
 import { Row, Col, Button, Form} from 'react-bootstrap';
@@ -106,7 +106,10 @@ export default function FormCadastro() {
 
           </div>
 
-          <Button variant="warning" type="submit">Cadastrar</Button>
+          <div className="botoes">
+            <Button variant="danger"><Link to={`/`}>Cancelar</Link></Button>
+            <Button variant="warning" type="submit"><Link>Cadastrar</Link></Button>
+          </div>
 
           <br className="unselectable" />
           <br className="unselectable" />
