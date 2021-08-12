@@ -69,48 +69,31 @@ router.get('/professores', jwtMiddleware, async (req, res, next) => {
   }
 });
 
+router.get('/profAluno/:id', jwtMiddleware, async (req, res, next) => {
+  try {
+    const profId = req.params.id;
+    // console.log(profId);
+    const users = await UserService.getAlunosProfessor(profId);
+    res.status(200).json(users);
+  } catch (error) {
+    next(error);
+  }
+});
+
 router.put('/user/:id', jwtMiddleware,
-  objectFilter('body', ['name', 'email']),
+  objectFilter('body', ['name', 'data_nasc', 'instrumento']),
   userValidate('updateUser'),
   async (req, res, next) => {
     try {
+      // console.log("ALOOOOOOOOOOOO");
       const userId = req.params.id;
+      // console.log(req.body);
       await UserService.updateUser(userId, req.user.id, req.user.cargo, req.body);
       res.status(204).end();
     } catch (error) {
       next(error);
     }
   });
-
-// router.put('/user/:id', jwtMiddleware,
-// objectFilter('body', ['name', 'email']),
-// userValidate('updateUser'),
-// async (req, res, next) => {
-//   try {
-//     const userId = req.params.id;
-//     
-//     if(user.cargo === "aluno"){
-//       const aluno = Aluno.findByPk(userId);
-// 
-//       const newAlunoData = {
-//         instrumento:req.instrumento,
-//       }
-//       aluno.update(newAlunoData);
-//     }
-//     if(user.cargo === "professor"){
-//       const professor = Professor.findByPk(userId);
-// 
-//       const newProfessorData = {
-//         instrumento:req.instrumento,
-//       }
-//       professor.update(newProfessorData);
-//     }
-//     await UserService.updateUser(userId, req.user.id, req.user.cargo, req.body);
-//     res.status(204).end();
-//   } catch (error) {
-//     next(error);
-//   }
-// });
 
 router.delete('/user/:id', jwtMiddleware, checkRole('admin'), async (req, res, next) => {
   try {

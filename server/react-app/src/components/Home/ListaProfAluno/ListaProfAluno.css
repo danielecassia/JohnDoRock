@@ -1,0 +1,17 @@
+a{
+    color: black !important;
+}
+
+.ListaProfessores{
+    width: 100%;
+    font-size: 1em;
+    padding: 0;
+    margin: 0;
+}
+.ListaProfessores ListGroup{
+    width: 100%;
+}
+Table {
+    width: 70% !important;
+    align-self: center;
+}

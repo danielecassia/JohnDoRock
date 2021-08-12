@@ -4,25 +4,24 @@
   font-family: 'Roboto', monospace !important;
 }
 
-html, body {
-  height: 100%;
-}
-
 body {
-  max-width: 100%;
-  max-height: 100%;
+  /* max-width: 100%; */
+  /* max-height: 100%; */
   padding: 0;
   margin: 0 auto !important;
+
 }
 
 #root {
   height: 100%;
   /* cor de fundo da tela inteira */
-  background-color: #fff;
+  /* background-color:gray; */
 }
 .App {
   text-align: center;
   height: 100%;
+  /* background-color:gray; */
+
 }
 
 

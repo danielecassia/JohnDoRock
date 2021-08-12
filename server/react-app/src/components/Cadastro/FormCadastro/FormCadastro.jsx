@@ -107,8 +107,9 @@ export default function FormCadastro() {
           </div>
 
           <div className="botoes">
+          <Button variant="warning" type="submit"><Link>Cadastrar</Link></Button>
             <Button variant="danger"><Link to={`/`}>Cancelar</Link></Button>
-            <Button variant="warning" type="submit"><Link>Cadastrar</Link></Button>
+            
           </div>
 
           <br className="unselectable" />

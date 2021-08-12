@@ -4,7 +4,7 @@ import { useParams, useHistory, Link  } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Card, Container, Col, Row, Button } from 'react-bootstrap';
-import ListaProfessores from '../ListaProfessores/ListaProfessores';
+import ListaProfAluno from '../ListaProfAluno/ListaProfAluno';
 
 export default function PerfilAluno() {
 
@@ -50,7 +50,7 @@ export default function PerfilAluno() {
 
         <Row className="rowPerfil">
           <h2> Alunos </h2>
-          <ListaProfessores/>
+          <ListaProfAluno userid={id}/>
         </Row>
       </Container>
     </div>    

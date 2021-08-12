@@ -3,7 +3,7 @@
 }
 
 .containerPerfil {
-  background-color: #fff;
+  /* background-color:gray; */
   /* Isso muda o tamanho do cantainer */
   padding: 0;
   margin: 0 auto;
@@ -11,6 +11,8 @@
 }
 
 .rowDados {
+  background-color: #f2f1f2 !important;
+  color: #111;
   padding-top: 2em;
   padding: 3em;
   box-shadow: 1px 1px 5px 0px #888888;
@@ -19,6 +21,7 @@
 }
 
 .rowPerfil {
+  background-color: #f2f1f2 !important;
   padding-top: 2em;
   box-shadow: 1px 1px 5px 0px #888888;
   margin-bottom: 2em;
@@ -26,10 +29,10 @@
 
 
 /*Card com imagem*/
-.ColunaImg{
+.ColunaImgForm{
   /* border: 1px solid red; */
   align-self: center;
-  margin-left: 18%;
+  margin-left: 5%;
 }
 
 .FotoPerfilAluno{
@@ -42,7 +45,7 @@
 }
 
 .FotoPerfilAluno img{
-  width: 100%;
+  width: 110%;
   margin: 0%;
   margin-bottom:5px;
   border-radius: 100%;
@@ -124,7 +127,7 @@
   /* background-color: red; */
 }
 
-#formPerfil{
+.formPerfil{
   color:black !important;
 }
 
@@ -136,9 +139,12 @@ form input[type=date], form input[type=date]::-webkit-datetime-edit {
   margin-top: 1%;
   margin-bottom: 1%;
   padding: 1px 5px;
+  background-color: #f2f1f2;
+
 }
 
 form input[type=date]{
+  background-color: #f2f1f2;
   border: 1px solid #dba520;
   outline: none;
   outline-style: none;

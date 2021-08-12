@@ -1,12 +1,11 @@
 .Home {
   height: 100%;
+
 }
-/* .containerHome {
-  background-color: #fff;
-  padding: 0;
-  margin: 0 auto;
-  height: 80%;
-} */
+containerHome {
+  background-color: #f2f1f2;
+
+} 
 
 .Listas {
   margin: auto;
