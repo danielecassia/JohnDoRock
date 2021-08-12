@@ -1,6 +1,6 @@
 import './PerfilAluno.css'
 import Logo from '../../../assets/fotoperfil.jpg';
-import { useParams, useHistory  } from 'react-router-dom';
+import { useParams, useHistory, Link  } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Card, Container, Col, Row, Button } from 'react-bootstrap';
@@ -21,15 +21,15 @@ export default function PerfilAluno() {
   return(
     <div className="PerfilAluno">
       <Container fixed className ="containerPerfil">
-        <Row className = "rowDados">
+        <Row className = "rowDados" bg="dark">
 
-          <Col xs lg="2" className = "ColunaImg">
+          <Col xs lg="2" className = "ColunaImgPerfil">
               <Card.Title className="FotoPerfilAluno" >
                 <img src={Logo} alt="Foto de Perfil" width="100%"/>
                 <br />
-                <Card.Text className="botoesFormPerfil">
-                  <p> {selectedUser ? selectedUser.name : ''} </p>
-                  <Button variant="warning">Adicionar Professor</Button>    
+                <Card.Text className="botoesFormPerfilAddProf">
+                  <p> {selectedUser ? selectedUser[0].name : ''} </p>
+                  <Button variant="warning"> +Professor</Button>    
                 </Card.Text>
               </Card.Title>
           </Col>
@@ -38,22 +38,18 @@ export default function PerfilAluno() {
           
           <Col xs lg="4" className = "ColunaDados">
                 <Card.Text className="cardPerfil">
-                  <p> Nome: {selectedUser ? selectedUser.name : ''} </p> 
-                  <p> Email: {selectedUser ? selectedUser.email : ''} </p> 
-                  <p> Data de nascimento: {selectedUser ? selectedUser.data_nasc : ''} </p> 
-                  <p> Instrumento: Violão </p> 
+                  <p> Nome: {selectedUser ? selectedUser[0].name : ''} </p> 
+                  <p> Instrumento: {selectedUser ? selectedUser[0].instrumento : ''} </p>
+                  <p> Data de nascimento: {selectedUser ? selectedUser[0].data_nasc : ''} </p>  
                   <div className="botoesFormPerfil">
-                    <Button variant="primary">Editar</Button>   
-                    {/* <Button variant="danger">Cancelar</Button>    
-                    <Button variant="success">Salvar</Button>     */}
+                    <Button variant="primary"><Link to={`/editUser/${id}`}>Editar</Link></Button>
                   </div>
                 </Card.Text>
-
           </Col>
         </Row>
 
         <Row className="rowPerfil">
-          <h2> Professores </h2>
+          <h2> Alunos </h2>
           <ListaProfessores/>
         </Row>
       </Container>

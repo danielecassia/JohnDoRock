@@ -39,8 +39,8 @@ class UserService {
     });
   }
 
-  async getUserById(id) {
-    const user = await User.findByPk(id, {
+  async getUserById(iduser) {
+    const user = await User.findByPk(iduser, {
       raw: true,
       attributes:
     {
@@ -49,9 +49,28 @@ class UserService {
     },
     });
     if(!user){
-      throw new QueryError(`Não foi encontrado um usuário com o ID: ${id}`);
+      throw new QueryError(`Não foi encontrado um usuário com o ID: ${iduser}`);
     }
-    return user;
+    if(user.cargo == 'professor') {
+      const userEncontrado = await sequelize.query(
+        'SELECT * FROM users as u INNER JOIN professors as p ON u.id = p.UserId WHERE u.id = :id_search',
+        {
+          replacements: { id_search: iduser },
+          type: QueryTypes.SELECT,
+        }
+      );
+      return userEncontrado;
+    }
+    //``
+    // else if(cargo=='aluno') {
+    //   const userEncontrado = await sequelize.query(
+    //     `SELECT * FROM users WHERE id=${id}`,
+    //     {
+    //       type: QueryTypes.SELECT,
+    //     }
+    //   );
+    // }
+    // return user;
   }
 
   async getProfessores() {

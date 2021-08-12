@@ -1,6 +1,6 @@
 import { Card, Col } from 'react-bootstrap'
 import { useState, useEffect } from 'react'
-// import { useRouteMatch } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
 
 import './ListaAlunos.css'
@@ -22,7 +22,9 @@ export default function ListaAlunos() {
         <Card border="light" style={{ width: '18rem' }}>
             <Card.Body>
                 <Card.Text>
-                    {element.name} <br /> {element.email}
+                    <Link to={`/perfil/${element.UserId}`} style={{ textDecoration: 'none' }} >
+                        {element.name} <br /> {element.email}
+                    </Link>
                 </Card.Text>
             </Card.Body>
         </Card>

@@ -6,10 +6,10 @@ import NavBar from './NavBar/NavBar';
 import Footer from './Footer/Footer'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './Home.css';
-
 import ListaAlunos from './ListaAlunos/ListaAlunos';
 import ListaProfessores from './ListaProfessores/ListaProfessores';
 import PerfilAluno from './PerfilAluno/PerfilAluno';
+import PerfilEdit from './PerfilEdit/PerfilEdit'
 
 export default function Home() {
   const history = useHistory();
@@ -47,6 +47,10 @@ export default function Home() {
               <Route path="/perfil/:id">
                 <PerfilAluno />
               </Route>
+              <Route path="/editUser/:id">
+                <PerfilEdit/>
+              </Route>
+
             </Switch>
           </Router>
         </Container>

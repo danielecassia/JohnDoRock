@@ -26,12 +26,14 @@
 
 
 /*Card com imagem*/
-.ColunaImgPerfil{
+.ColunaImg{
+  /* border: 1px solid red; */
   align-self: center;
-  margin-left: 25%;
+  margin-left: 18%;
 }
 
 .FotoPerfilAluno{
+  /* border: 1px solid blue; */
   padding-bottom: 20%;
   margin-bottom: 5px;
   align-self: center;
@@ -48,6 +50,9 @@
 
 /*Card Perfil*/
 
+.ColunaDados{
+  /* background-color: blue; */
+}
 
 .cardPerfil {
   position: relative;
@@ -55,6 +60,8 @@
   width: 100% !important;
   margin: auto;
   padding: 10px;
+  /* background-color: cadetblue; */
+  /* color: red; */
   font-size: 20px;
   word-wrap: break-word;
   text-align: left; 
@@ -121,12 +128,26 @@ form input{
   color:black !important;
 }
 
-form input:-webkit-autofill {
-  -webkit-text-fill-color: #000 !important;
+input:-webkit-autofill {
+  -webkit-text-fill-color: #111 !important;
   -webkit-text-size-adjust: larger !important;
-  -webkit-box-shadow: 0 0 0 30px #fff;
-  -webkit-background: #fff;
+  -webkit-box-shadow: 0 0 0 30px #fff inset;
 }
+
+input[type=text]{
+  color: #fff;
+  caret-color: #fff;
+  background-color: transparent;
+  
+  outline: none;
+  outline-style: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: solid #dba520 1px;
+  font-size: 0.9em;
+}
+
 
 form input[type=date], form input[type=date]::-webkit-datetime-edit {
   color: gray;

@@ -45,10 +45,7 @@ export default function FormCadastro() {
     event.preventDefault();
     axios.post('/users', formValues)
       .then( 
-        // (res) => {
-        // console.log(res);
         history.push('/')
-      // }
       )
       .catch( (err) => console.log(err.response) )
   }
@@ -99,7 +96,6 @@ export default function FormCadastro() {
                 <div id="Cargo">
                   Usuário
                   <select name="cargo" className="me-sm-2" required id="inlineFormCustomSelect" onChange={inputChange} placeholder>
-                    {/* <option value="">Cargo</option> */}
                     <option value=""></option>
                     <option value="aluno">Aluno</option>
                     <option value="professor">Professor</option>
