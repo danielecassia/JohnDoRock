@@ -1,6 +1,5 @@
 .NavBar{
   background-color: #242424 !important;
-  margin-bottom: 1em;
 }
 
 .navbar-brand{
@@ -25,6 +24,12 @@
 
 .LinkNavBar {
   color: silver !important;
+}
+
+.NavBar a{
+  color: white !important;
+  text-decoration: none !important;
+  margin: 5px;
 }
 
 .grupoUsuario Button{

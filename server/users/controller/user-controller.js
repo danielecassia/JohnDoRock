@@ -81,14 +81,26 @@ router.get('/profAluno/:id', jwtMiddleware, async (req, res, next) => {
 });
 
 router.put('/user/:id', jwtMiddleware,
-  objectFilter('body', ['name', 'data_nasc', 'instrumento']),
-  userValidate('updateUser'),
+  objectFilter('body', ['name', 'instrumento', 'data_nasc']),
+  // userValidate('updateUser'),
   async (req, res, next) => {
     try {
-      // console.log("ALOOOOOOOOOOOO");
       const userId = req.params.id;
-      // console.log(req.body);
       await UserService.updateUser(userId, req.user.id, req.user.cargo, req.body);
+      res.status(204).end();
+    } catch (error) {
+      next(error);
+    }
+  });
+
+router.put('/addprofessor/:id', jwtMiddleware,
+  objectFilter('body', ['professor']),
+  // userValidate('updateUser'),
+  async (req, res, next) => {
+    try {
+      const userId = req.params.id;
+      console.log(userId);
+      await UserService.updateAluno(userId, req.body);
       res.status(204).end();
     } catch (error) {
       next(error);

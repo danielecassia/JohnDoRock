@@ -8,12 +8,13 @@
   padding: 0;
   margin: 0 auto;
   height: 100%;
+  margin-top: 2em !important;
+
 }
 
 .rowDados {
-  background-color: #f2f1f2 !important;
+  background-color: #fff !important;
   color: #111;
-  padding-top: 2em;
   padding: 3em;
   box-shadow: 1px 1px 5px 0px #888888;
   margin-bottom: 2em;
@@ -21,7 +22,7 @@
 }
 
 .rowPerfil {
-  background-color: #f2f1f2 !important;
+  background-color: #fff !important;
   padding-top: 2em;
   box-shadow: 1px 1px 5px 0px #888888;
   margin-bottom: 2em;
@@ -139,12 +140,12 @@ form input[type=date], form input[type=date]::-webkit-datetime-edit {
   margin-top: 1%;
   margin-bottom: 1%;
   padding: 1px 5px;
-  background-color: #f2f1f2;
-
+  background-color: #fff;
 }
 
+
 form input[type=date]{
-  background-color: #f2f1f2;
+  background-color: #fff;
   border: 1px solid #dba520;
   outline: none;
   outline-style: none;
@@ -153,3 +154,4 @@ form input[type=date]{
 form input[type=date]::-webkit-calendar-picker-indicator {
   filter: invert(1);
 }
+

@@ -3,7 +3,7 @@
   width: 100%;
 }
 
-.containerPerfil {
+.containerPerfilAdd {
   background-color: #f2f1f2;
 
   /* Isso muda o tamanho do cantainer */
@@ -11,10 +11,11 @@
   margin: 0 ;
   height: 100%;
   width: 100%;
-  margin-top: 2em !important;
+  margin-top: 6em;
+
 }
 
-.rowDados {
+.rowDadosAddProf {
   background-color: #fff !important;
   color: #111;
   padding-top: 2em;
@@ -119,7 +120,12 @@
   margin: 30px;
   padding: 20px;
   width: 100%;
+  /* background-color: red; */
 }
+
+/* form input{
+  color:black !important;
+} */
 
 
 form input[type=date], form input[type=date]::-webkit-datetime-edit {
@@ -141,6 +147,12 @@ form input[type=date]::-webkit-calendar-picker-indicator {
   filter: invert(1);
 }
 
-.ColunaDados {
-  margin-top: -30px;
+.cardPerfil select{
+  background-color: #fff;
+  color: #111;
+  width: 100%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  padding: 2% 1px;
+  border: 1px solid #dba520;
 }

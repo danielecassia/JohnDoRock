@@ -41,10 +41,10 @@ function getValidations(method) {
         .optional()
         .isAlpha('pt-BR', {ignore: ' '})
         .withMessage('Seu nome só pode conter letras.'),
-      body('email')
+      body('instrumento')
         .optional()
-        .isEmail()
-        .withMessage('O email inserido não é válido.'),
+        .isAlpha('pt-BR', {ignore: ' '})
+        .withMessage('Instrumento só pode conter letras.'),
     ];
   };
   }

@@ -14,6 +14,10 @@ export default function NavBar(props) {
     axios.get('/users/logout');
     history.push('/');
   }
+
+  function handlePerfil() {
+    history.push(`/perfil/${props.user.id}`);
+  }
   return (
 
     <div className='NavBar'>
@@ -35,10 +39,11 @@ export default function NavBar(props) {
 
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="me-auto">
-          <Nav.Link className="LinkNavBar" href="#home">Home</Nav.Link>
-          <Nav.Link className="LinkNavBar" href="#pricing" >Perfil</Nav.Link>
+        <Link to={"/"}>Home</Link>
+        {/* <Link to={`/perfil/${props.user.id}`}>Perfil</Link> */}
+        <Link onClick={() => handlePerfil()}>Perfil</Link>
         </Nav>
-        
+
         <Nav className="grupoUsuario">
           <Button variant="warning" onClick={() => handleLogout()}>Sair</Button>
         </Nav>

@@ -6,7 +6,7 @@ import axios from 'axios';
 import { Card, Container, Col, Row, Button, Form } from 'react-bootstrap';
 import ListaProfAluno from '../ListaProfAluno/ListaProfAluno';
 
-export default function PerfilAluno() {
+export default function PerfilAluno(props) {
 
   const history = useHistory();
   const [selectedUser, setSelectedUser] = useState();
@@ -20,7 +20,7 @@ export default function PerfilAluno() {
 
   const [formValues, setFormValues] = useState({
     name: '',
-    // instrumento: '',
+    instrumento: '',
     data_nasc: '',
   })
 
@@ -53,7 +53,7 @@ export default function PerfilAluno() {
                 <img src={Logo} alt="Foto de Perfil" width="100%"/>
                 <br />
                 <Card.Text className="botoesFormPerfilAddProf">
-                  <p> {selectedUser ? selectedUser[0].name : ''} </p>
+                  <h3> {selectedUser ? selectedUser[0].name : ''} </h3>
                 </Card.Text>
               </Card.Title>
           </Col>
@@ -62,27 +62,23 @@ export default function PerfilAluno() {
           
           <Col xs lg="4" className = "ColunaDados">
                 <Card.Text className="cardPerfil">
-                <Form method="POST" onSubmit={handleSubmit} className="formAtualizar">
-                  <input id="name" className="formPerfil" name="name" type="text" placeholder={selectedUser ? selectedUser[0].name : ''} onChange={inputChange}/>
-                  <input id="instrumento" className="formPerfil" name="instrumento" type="text" placeholder={selectedUser ? selectedUser[0].instrumento : ''} onChange={inputChange}/>
-                  <br/>
-                  <input id="data_nasc" className="formPerfil" name="data_nasc" type="date" onChange={inputChange}/>
-                  <div className="botoesFormPerfil">
-                  <Button variant="primary" type="submit">Salvar</Button>
-                  <Button variant="danger"><Link to={`/perfil/${id}`}>Cancelar</Link></Button>    
-                      
-                  </div>
-                </Form>
+                  <Form method="POST" onSubmit={handleSubmit} className="formAtualizar">
+                    <input id="name" className="formPerfil" name="name" type="text" placeholder={selectedUser ? selectedUser[0].name : ''} onChange={inputChange}/>
+                    <input id="instrumento" className="formPerfil" name="instrumento" type="text" placeholder={selectedUser ? selectedUser[0].instrumento : ''} onChange={inputChange}/>
+                    <br/>
+                    <input id="data_nasc" className="formPerfil" name="data_nasc" type="date" onChange={inputChange}/>
+                    <div className="botoesFormPerfil">
+                    <Button variant="primary" type="submit">Salvar</Button>
+                    <Button variant="danger"><Link to={`/perfil/${id}`}>Cancelar</Link></Button>    
+                        
+                    </div>
+                  </Form>
                   
                 </Card.Text>
 
           </Col>
         </Row>
-
-        <Row className="rowPerfil">
-          <h2> Alunos </h2>
-          <ListaProfAluno userid={id}/>
-        </Row>
+          <ListaProfAluno userid={id} userCargo={selectedUser ? selectedUser[0].cargo : ''}/>
       </Container>
     </div>    
   )

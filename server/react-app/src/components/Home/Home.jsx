@@ -10,6 +10,7 @@ import ListaAlunos from './ListaAlunos/ListaAlunos';
 import ListaProfessores from './ListaProfessores/ListaProfessores';
 import PerfilAluno from './PerfilAluno/PerfilAluno';
 import PerfilEdit from './PerfilEdit/PerfilEdit'
+import AddProfessor from './PerfilAddProfessor/AddProfessor';
 
 export default function Home() {
   const history = useHistory();
@@ -29,14 +30,14 @@ export default function Home() {
               <Route path="/home"> 
                 <Container maxWidth="md" className ="containerHome">
                   <div className='Listas'>
-                    <h2> Alunos </h2>
+                    <h2> Últimos Alunos Cadastrados</h2>
                     <Container className ="containerAlunos">
                       <Row>
                         <ListaAlunos/>
                       </Row>
                     </Container >
 
-                    <h2> Professores </h2>
+                    <h2> Lista de Professores </h2>
                     <Container className ="containerProfessores">
                       <ListaProfessores/>
                     </Container>
@@ -45,10 +46,13 @@ export default function Home() {
               </Route>
 
               <Route path="/perfil/:id">
-                <PerfilAluno />
+                <PerfilAluno user={user}/>
               </Route>
               <Route path="/editUser/:id">
-                <PerfilEdit/>
+                <PerfilEdit user={user}/>
+              </Route>
+              <Route path="/addprofessor/:id">
+                <AddProfessor user={user}/>
               </Route>
 
             </Switch>

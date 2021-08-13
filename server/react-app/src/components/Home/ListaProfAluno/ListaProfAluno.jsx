@@ -1,13 +1,12 @@
-import { ListGroup, Table } from 'react-bootstrap'
+import { ListGroup, Table, Row } from 'react-bootstrap'
 import { useState, useEffect } from 'react'
-import { Link, useRouteMatch } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
 
 import './ListaProfAluno.css'
 
 export default function Lista(props){
 
-    const match = useRouteMatch();
     const [alunos, setAlunos] = useState(false);
     useEffect(() => {
         axios.get(`/users/profAluno/${props.userid}`)
@@ -34,22 +33,32 @@ export default function Lista(props){
 
     
     if(alunos) loadedProfAluno = alunos.map(UserToListGroupItem);
-
+    if(props.userCargo === 'professor')
     return(
-        <div className='ListaProfessores'>
-            <ListGroup>
-                <Table triped bordered hover>
-                    <thead>
-                        <tr>
-                        <th>Nome</th>
-                        <th>Instrumento</th>
-                        </tr>
-                    </thead>
-                    <tbody> 
-                        {loadedProfAluno}
-                    </tbody>
-                </Table>
-            </ListGroup>
+        <div>
+            <Row className="rowPerfil">
+                <h2> Alunos </h2>
+                <div className='ListaProfessores'>
+                    <ListGroup>
+                        <Table triped bordered hover>
+                            <thead>
+                                <tr>
+                                <th>Nome</th>
+                                <th>Instrumento</th>
+                                </tr>
+                            </thead>
+                            <tbody> 
+                                {loadedProfAluno}
+                            </tbody>
+                        </Table>
+                    </ListGroup>
+                </div>
+            </Row>
+        </div>
+    )
+    else
+    return(
+        <div style={{padding: '6%'}}>
         </div>
     )
 };

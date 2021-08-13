@@ -19,15 +19,15 @@ export default function ListaAlunos() {
     let loadedListAlunos = [];
     const UserToListGroupItem = (element, index) =>
     <Col>
-        <Card border="light" style={{ width: '18rem' }}>
-            <Card.Body>
-                <Card.Text>
-                    <Link to={`/perfil/${element.UserId}`} style={{ textDecoration: 'none' }} >
-                        {element.name} <br /> {element.email}
-                    </Link>
-                </Card.Text>
-            </Card.Body>
-        </Card>
+        <Link to={`/perfil/${element.id}`} style={{ textDecoration: 'none' }} >
+            <Card border="light" style={{ width: '18rem' }}>
+                    <Card.Body>
+                        <Card.Text>
+                            {element.name} <br />
+                        </Card.Text>
+                    </Card.Body>
+            </Card>
+        </Link>
     </Col>
  
 

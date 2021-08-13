@@ -61,6 +61,16 @@ class UserService {
         );
       return userEncontrado;
     }
+    else if(user.cargo = 'aluno'){
+      const userEncontrado = await sequelize.query(
+        'SELECT * FROM users as u INNER JOIN alunos as a ON u.id = a.UserId WHERE u.id = :id_search',
+        {
+          replacements: { id_search: iduser },
+          type: QueryTypes.SELECT,
+        }
+      );
+    return userEncontrado;
+    }
   }
 
   async getProfessores() {
@@ -81,7 +91,7 @@ class UserService {
       }
       );
     return await sequelize.query(
-      "SELECT u.name, a.instrumento FROM alunos AS a INNER JOIN professors AS p ON a.ProfessorId = p.id INNER JOIN users AS u ON a.UserId = u.id WHERE a.ProfessorId = :id_search",
+      "SELECT u.name, a.instrumento, a.UserId FROM alunos AS a INNER JOIN professors AS p ON a.ProfessorId = p.id INNER JOIN users AS u ON a.UserId = u.id WHERE a.ProfessorId = :id_search",
       {
         replacements: { id_search: professor[0].id},
         type: QueryTypes.SELECT,
@@ -107,8 +117,8 @@ class UserService {
   }
   
   async updateUser(id, reqUserId, reqUserRole, body) {
-    const user = await User.findByPk(id);
-    if(!user){
+    const user = await this.getUserById(id);
+    if (!user) {
       throw new QueryError(`Não foi encontrado um usuário com o ID: ${id}`);
     }
     const isAdmin = reqUserRole === 'admin';
@@ -118,53 +128,30 @@ class UserService {
         throw new PermissionError(
           'Você não tem permissão para atualizar seu papel');
       }
-      // console.log(body);
-      if(body.instrumento && user.cargo == 'professor'){
+      if(user.cargo === 'professor'){
         await sequelize.query(
-          "UPDATE users as u INNER JOIN professors as p ON u.id = p.UserId SET u.name = ':nameUser', p.instrumento = ':instrumentoUser' WHERE u.id = :idUser",
+          "UPDATE users as u INNER JOIN professors as p ON u.id = p.UserId SET u.name = :nameUser, p.instrumento = :instrumentoUser, u.data_nasc = :dataUser WHERE u.id = :idUser",
           {
-            type: QueryTypes.SELECT,
+            type: QueryTypes.UPDATE,
             replacements: { 
               idUser: id,
-              nameUser: user.nameUser,
-              instrumentoUser: body.instrumento
+              dataUser: body.data_nasc ? body.data_nasc : user[0].data_nasc,
+              nameUser: body.name ? body.name : user[0].name,
+              instrumentoUser: body.instrumento ? body.instrumento : user[0].instrumento,
             },
           }
         );
       }
-      else if(!body.instrumento && user.cargo == 'professor'){
+      else if(user.cargo === 'aluno'){
         await sequelize.query(
-          "UPDATE users as u INNER JOIN professors as p ON u.id = p.UserId SET u.name = ':nameUser' WHERE u.id = :iduser",
+          "UPDATE users as u INNER JOIN alunos as a ON u.id = a.UserId SET u.name = :nameUser, a.instrumento = :instrumentoUser, u.data_nasc = :dataUser WHERE u.id = :idUser",
           {
-            type: QueryTypes.SELECT,
+            type: QueryTypes.UPDATE,
             replacements: { 
               idUser: id,
-              nameUser: user.nameUser,
-            },
-          }
-        );
-      }
-      else if(body.instrumento && user.cargo == 'aluno'){
-        await sequelize.query(
-          "UPDATE users as u INNER JOIN alunos as a ON u.id = a.UserId SET u.name = ':nameUser', a.instrumento = ':instrumentoUser' WHERE u.id = :iduser",
-          {
-            type: QueryTypes.SELECT,
-            replacements: { 
-              idUser: id,
-              nameUser: user.nameUser,
-              instrumentoUser: body.instrumento
-            },
-          }
-        );
-      }
-      else if(!body.instrumento && user.cargo == 'aluno'){
-        await sequelize.query(
-          "UPDATE users as u INNER JOIN alunos as a ON u.id = a.UserId SET u.name = 'jao', a.instrumento = 'bateria' WHERE u.id = :iduser",
-          {
-            type: QueryTypes.SELECT,
-            replacements: { 
-              idUser: id,
-              nameUser: user.nameUser,
+              dataUser: body.data_nasc ? body.data_nasc : user[0].data_nasc,
+              nameUser: body.name ? body.name : user[0].name,
+              instrumentoUser: body.instrumento ? body.instrumento : user[0].instrumento,
             },
           }
         );
@@ -173,6 +160,25 @@ class UserService {
       throw new PermissionError(
         'Você não tem permissão para atualizar esse usuário');
     }
+  }
+
+  async updateAluno(id, body){
+    const user = await this.getUserById(id);
+    if (!user) {
+      throw new QueryError(`Não foi encontrado um usuário com o ID: ${id}`);
+    }
+    console.log(user);
+    await sequelize.query(
+      "UPDATE alunos SET ProfessorId = :idprofessor WHERE UserId = :idAluno",
+      {
+        type: QueryTypes.UPDATE,
+        replacements: { 
+          idprofessor: body.professor ? body.professor : user.ProfessorId,
+          idAluno: id,
+        },
+      }
+    );
+    
   }
 
   async deleteUser(id, reqUserId) {

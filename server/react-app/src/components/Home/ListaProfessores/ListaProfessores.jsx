@@ -1,13 +1,12 @@
 import { ListGroup, Table } from 'react-bootstrap'
 import { useState, useEffect } from 'react'
-import { Link, useRouteMatch } from 'react-router-dom'
+import { Link} from 'react-router-dom'
 import axios from 'axios'
 
 import './ListaProfessores.css'
 
 export default function Lista(){
 
-    const match = useRouteMatch();
     const [professores, setProfessores] = useState(false);
 
     useEffect(() => {

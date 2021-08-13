@@ -3,10 +3,14 @@
   border-color: white;
 }
 
+.card-body{
+  margin: 0 !important;
+}
+
 .card {
   position: relative;
-  width: 200px !important;
-  box-shadow: 0 0 5px 0px #e2e2e2;
+  width: 180px !important;
+  box-shadow: 0 0 5px 0px grey;
   cursor: pointer;
   margin: 5px auto;  
 }

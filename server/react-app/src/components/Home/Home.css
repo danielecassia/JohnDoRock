@@ -2,9 +2,9 @@
   height: 100%;
 
 }
-containerHome {
-  background-color: #f2f1f2;
-
+.containerHome {
+  margin-bottom: 15px;
+  /* box-shadow: 0 0 5px 0px grey; */
 } 
 
 .Listas {
